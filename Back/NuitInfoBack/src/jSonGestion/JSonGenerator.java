@@ -6,14 +6,14 @@ import bean.Article;
 
 public abstract class JSonGenerator {
 
-	public static String listProduitToJSon(List<Article> produits){
+	public static String listProduitToJSon(List<Article> articles){
 
 		int i = 0;
 		String generatedJSon = "{\"listProduits\":[\n";
-		for (Article produit : produits) {
+		for (Article produit : articles) {
 			generatedJSon += produitToJSon(produit);
 
-			if(i != produits.size()-1){
+			if(i != articles.size()-1){
 				generatedJSon += ",\n";
 			}else{
 				generatedJSon += "\n";
@@ -24,8 +24,8 @@ public abstract class JSonGenerator {
 		return generatedJSon;
 	}
 	
-	public static String produitToJSon(Article produit){
+	public static String produitToJSon(Article articles){
 		
-		return "\n{\"id\":\""+produit.getId()+"\",\"nbSold\":\""+produit.getNb_Sold()+"\",\"stock\":\""+produit.getStock()+"\",\"prix\":\""+produit.getPrix()+"\"}";
+		return "\n{\"id\":\""+articles.getId()+"\",\"titre\":\""+articles.getTitre()+"\",\"chapeau\":\""+articles.getChapeau()+"\",\"chemin\":\""+articles.getCheminAccess()+"\"}";
 	}
 }
