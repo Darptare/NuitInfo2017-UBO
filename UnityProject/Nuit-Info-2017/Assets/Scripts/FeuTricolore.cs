@@ -33,7 +33,7 @@ public class FeuTricolore : MonoBehaviour {
 	}
 
 	public string getStatut(){
-
+        return null;
 
 	}
 }
