@@ -36,6 +36,10 @@ public class Question implements Serializable{
 
 	@Column(name = "reponse")
 	private String reponse; 
+	
+	@Column(name = "img")
+	private String img; 
+
 
 	public Question() {
 
@@ -83,6 +87,14 @@ public class Question implements Serializable{
 
 	public String getReponse() {
 		return reponse;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 
 	public void setReponse(String reponse) {
