@@ -8,6 +8,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import bean.Article;
+import bean.Question;
 
 public class DAO { 
 
@@ -57,5 +58,26 @@ public class DAO {
 
 		return art.get(0);
 	}
+
+
+	@SuppressWarnings("unchecked")
+	public List<Question> listerQuestions() { 
+		List<Question> lst = em.createQuery("select q from Quizz q").getResultList(); 
+		return lst; 
+	}
+	
+	@SuppressWarnings("unchecked")
+	public Question getQuestion(String id){
+		List<Question> quest = em.createQuery("select q from quizz q where id="+id).getResultList();
+		if(quest.isEmpty())
+			return null;
+
+		return quest.get(0);
+	}
+	
+	public void enregistrerQuestion(Question q) { 
+		em.persist(q); 
+
+	} 
 
 }
