@@ -5,7 +5,7 @@ using UnityEngine;
 public class PassagePieton : MonoBehaviour {
 
 	[SerializeField]
-	private GameObject feuxTricolore;
+	private FeuTricolore feuxTricolore;
 
 	// Use this for initialization
 	void Start () {
@@ -19,5 +19,9 @@ public class PassagePieton : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public string getEtatFeuxTricolore(){
+		return feuxTricolore.getStatut();
 	}
 }

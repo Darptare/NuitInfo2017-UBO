@@ -8,9 +8,11 @@ public class Player : MonoBehaviour {
     private float speed;
 
     [SerializeField]
-    private bool dead = false;
+    public bool dead = false;
 
     private Rigidbody rb;
+
+    public gameManager manager;
 
     void Start()
     {
@@ -42,6 +44,8 @@ public class Player : MonoBehaviour {
                 rb.AddForce(50.0f, 50.0f, 50.0f);
 
                 dead = true;
+
+                manager.onDead();
             }
             
         }
