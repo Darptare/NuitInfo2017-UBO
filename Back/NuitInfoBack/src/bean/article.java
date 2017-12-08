@@ -1,59 +1,35 @@
 package bean;
 
-
-import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table; 
-
-@Entity 
-@Table(name = "Article") 
-public class Article implements Serializable {
-	
-	/** 
-	 *  
-	 */ 
-	private static final long serialVersionUID = 1L; 
-
-	@Id 
-	@Column(name = "id", nullable = false, insertable = false, updatable = false) 
-	@GeneratedValue(strategy=GenerationType.IDENTITY) 
+public class article{
 	private Integer id; 
 
-	@Column(name = "titre")
 	private String titre; 
 
-	@Column(name = "chapeau")
 	private String chapeau; 
 	
-	@Column(name = "cheminAcces")
 	private String cheminAcces;
 	
-	public Article(){
+	public article(){
 		
 	}
 	
-	public Article(Integer id){
+	public article(Integer id){
 		this.id = id;
 	}
 	
-	public Article(Integer id, String titre){
+	public article(Integer id, String titre){
 		this.id = id;
 		this.titre = titre;
 	}
 
 	
-	public Article(Integer id, String titre, String chapeau){
+	public article(Integer id, String titre, String chapeau){
 		this.id = id;
 		this.titre = titre;
 		this.chapeau = chapeau;
 	}
 	
-	public Article(Integer id, String titre, String chapeau, String cheminAcces){
+	public article(Integer id, String titre, String chapeau, String cheminAcces){
 		this.id = id;
 		this.titre = titre;
 		this.chapeau = chapeau;
@@ -92,7 +68,4 @@ public class Article implements Serializable {
 		this.cheminAcces = cheminAcces;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 }
